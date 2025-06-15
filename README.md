@@ -1,4 +1,4 @@
-# Journal Sentiment Analyzer
+# PulseNote: A Journal Analyzer
 
 A small AWS-powered app that analyzes the emotional tone of your journal entries using Amazon Comprehend. Built to explore serverless architecture, mental wellness tools, and hands-on ML services.
 
