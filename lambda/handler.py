@@ -58,6 +58,19 @@ def decode_base64_file(file_b64):
 # This is the entry point for the AWS Lambda function
 
 def lambda_handler(event, context):
+    body = event.get("body")
+    if body is None:
+        return {
+            "statusCode": 400,
+            "body": json.dumps({"error": "Missing request body."})
+        }
+
+    # If body is a string (from API Gateway), parse it
+    if isinstance(body, str):
+        body = json.loads(body)
+
+    # Now body is a dictionary — safe to use
+    journal_text = body.get("text")
     try:
         body = event.get("body")
         if isinstance(body, str):
