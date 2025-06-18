@@ -1,35 +1,72 @@
-# PulseNote: A Journal Analyzer
+# ✨ PulseNote: Journal Sentiment Analyzer 🧠📝
 
-A small AWS-powered app that analyzes the emotional tone of your journal entries using Amazon Comprehend. Built to explore serverless architecture, mental wellness tools, and hands-on ML services.
+A reflective journaling tool that uses AI to analyze the **emotion**, **tone**, and **key phrases** in your writing. Built with a full **AWS serverless stack** and a modern React frontend.
 
-## 🔍 Features
-- Upload journal text
-- Sentiment analysis (Positive, Neutral, Negative, Mixed)
-- Key phrase extraction
-- Serverless architecture via AWS Lambda
+---
 
-## 🛠️ Built With
-- AWS Lambda
-- Amazon Comprehend
-- Amazon S3
-- IAM Roles & CloudWatch
+## 🌍 Live Demo
 
-## 🚀 How It Works
-1. Upload or write a journal entry
-2. Trigger a Lambda function (manually or via S3 event)
-3. Lambda reads your entry and uses Comprehend to analyze:
-   - Sentiment
-   - Key phrases
-4. Results are returned in JSON format
+👉 **Try it here**: [http://pulse-note-frontend.s3-website.us-east-2.amazonaws.com/](http://pulse-note-frontend.s3-website.us-east-2.amazonaws.com/)
 
-## 🧪 Example Output (as of the current version)
-```json
-{
-  "Sentiment": "NEUTRAL",
-  "Positive": 0.12,
-  "Negative": 0.05,
-  "Neutral": 0.81,
-  "Mixed": 0.02,
-  "KeyPhrases": ["meeting today", "feeling scattered", "progress"]
-}
+No installation needed. Just write, reflect, and grow.
 
+---
+
+## ⚙️ For Developers
+
+Want to customize or contribute? Follow the steps below to run locally.
+
+### 1. Clone the Repo
+
+git clone https://github.com/MrSmoove/journal-sentiment-analyzer.git
+cd journal-sentiment-analyzer/frontend
+### 2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+### 3. Create Your .env File
+Inside frontend/, add a .env file with:
+
+env
+Copy
+Edit
+VITE_API_URL=https://your-api-id.execute-api.us-east-2.amazonaws.com/dev/analyze
+### 4. Run Locally
+bash
+Copy
+Edit
+npm run dev
+
+### 🌐 Live Deployment
+Your site is hosted on AWS S3 with public access and static website hosting enabled.
+To build and deploy manually:
+
+bash
+Copy
+Edit
+npm run build
+Then upload the contents of frontend/dist/ to your S3 bucket.
+
+🤖 GitHub Actions (CI/CD)
+Automatically deploy to S3 on push to main branch. Configure your .github/workflows/deploy.yml like this:
+
+yaml
+Copy
+Edit
+# Sample setup (replace with your actual S3 bucket + AWS secrets)
+[You can find the full deploy.yml in the .github/workflows directory.]
+
+🧪 Testing & Feedback
+🧪 Test API responses using test_data/test_request.py
+
+✅ All requests validated against AWS Comprehend’s expected payload
+
+🗂️ Errors and timeouts handled gracefully with clear messages
+
+✨ Future Features
+📈 Mood trend chart with DynamoDB
+
+🎯 Prompt suggestions based on sentiment
+
+📲 Mobile-first design polish
