@@ -1,6 +1,38 @@
 # ✨ PulseNote: Journal Sentiment Analyzer 🧠📝
 
-A reflective journaling tool that uses AI to analyze the **emotion**, **tone**, and **key phrases** in your writing. Built with a full **AWS serverless stack** and a modern React frontend.
+PulseNote is a **fully-deployed journal sentiment analyzer** that allows users to reflect on their writing and receive **AI-driven emotional insights**, **summaries**, and **keyword analysis**. Ideal for personal growth, mental clarity, or even creative writing feedback.
+
+---
+
+## 🔧 Tech Stack
+
+| Layer       | Tech Used                                      |
+|-------------|------------------------------------------------|
+| Frontend    | **React**, HTML, CSS                           |
+| Styling     | Custom CSS (Tailwind optional, not required)   |
+| Backend API | **AWS Lambda** (Python), **API Gateway**       |
+| NLP Model   | **Amazon Comprehend** for sentiment + phrases  |
+| Storage     | **AWS S3** (Static Website Hosting)            |
+| CI/CD       | **GitHub Actions** for automated deployment    |
+
+---
+
+## 📊 Core Features
+
+- 🧠 **Sentiment Analysis**: Positive, Negative, Neutral, or Mixed
+- 🧾 **Key Phrase Extraction**: Get dominant phrases from your writing
+- 📝 **Summarized Feedback**: AI-generated summaries & affirmations
+- 🔁 **History Tracking**: Stores the last **10** entries locally
+- ⚡ **Rate Limiting**: Prevent spam with a 10s delay between entries
+- 🌗 **Dark Mode Ready** (optional toggle)
+
+---
+
+## 🚀 Deployment Stats
+
+- ✅ **100% Serverless Architecture**
+- 🔐 Uses `.env` to securely store API keys
+- ⚙️ Supports **automated S3 deployment** via GitHub Actions
 
 ---
 
